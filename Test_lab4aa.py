@@ -54,6 +54,8 @@ def test_dice():
     assert y>0 and y<=6
 print(test_dice())
 
+#432
+
 
 
 
