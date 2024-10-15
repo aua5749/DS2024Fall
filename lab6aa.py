@@ -35,6 +35,7 @@ print(data[0]['bls']['2008']['employed'])
     #print(sum(i['noaa']['temp-jan'], i['noaa']['temp-apr'], i['noaa']['temp-jul'], i['noaa']['temp-oct']))
 
 def least_var(data: data):
+    "retunrs least temperature variant county"
     county = data[0]['name']
     state = data[0]['state']
     var = 100000
@@ -54,15 +55,16 @@ def least_var(data: data):
 # description='least temperature variant'
 # print(generated_sentence_variance.format(county, state, description))
 
-generated_sentence_variance = '{county}, {state} is the {description} county'
+generated_sentence_least_variance = '{county}, {state} is the {description} county'
 county = least_var(data)[0]
 state = least_var(data)[1]
 description = 'least temperature variant'
-temp_variance_sentence = generated_sentence_variance.format(county=county, state=state, description=description)
+temp_variance_sentence = generated_sentence_least_variance.format(county=county, state=state, description=description)
 print(temp_variance_sentence)
 
 
 def greatest_var(data: data):
+    "returns greatest temperature variant county"
     county = data[0]['name']
     state = data[0]['state']
     var = 1
@@ -75,9 +77,17 @@ def greatest_var(data: data):
             state=i['state']
     return county, state, var #????????
 greatest_var(data)
+
 print(greatest_var(data))
+generated_sentence_greatest_variance = '{county}, {state} is the {description} county'
+county = greatest_var(data)[0]
+state = greatest_var(data)[1]
+description = 'greatest temperature variant'
+temp_variance_greatest_sentence = generated_sentence_greatest_variance.format(county=county, state=state, description=description)
+print(temp_variance_greatest_sentence)
 
 def increase(data: data):
+    "Returns fastest increasing population county"
     county = data[0]['name']
     state = data[0]['state']
     slope = 0
@@ -91,9 +101,17 @@ def increase(data: data):
             state = i['state']
     return county, state, slope
 
+generated_sentence_fastest_growing = '{county}, {state} is the {description} county'
+county = increase(data)[0]
+state = increase(data)[1]
+description = 'fastest growing'
+growing_sentence = generated_sentence_fastest_growing.format(county=county, state=state, description=description)
+print(growing_sentence)
+
 print(increase(data))
 
 def decrease(data: data):
+    "returns fastest shrinking population county"
     county = data[0]['name']
     state = data[0]['state']
     slope = 1000000000
@@ -109,7 +127,15 @@ def decrease(data: data):
 
 print(decrease(data))
 
+generated_sentence_fastest_shrinking = '{county}, {state} is the {description} county'
+county = decrease(data)[0]
+state = decrease(data)[1]
+description = 'fastest shrinking'
+shrinking_sentence = generated_sentence_fastest_shrinking.format(county=county, state=state, description=description)
+print(shrinking_sentence)
+
 def most_deaths(data: data):
+    "returns county with most deaths"
     county = data[0]['name']
     state = data[0]['state']
     death = 0
@@ -140,7 +166,15 @@ def most_deaths(data: data):
 #
 print(most_deaths(data))
 
+generated_sentence_deaths = '{county}, {state} is the {description} county'
+county = most_deaths(data)[0]
+state = most_deaths(data)[1]
+description = 'greatest dying'
+death_sentence = generated_sentence_fastest_growing.format(county=county, state=state, description=description)
+print(death_sentence)
+
 def most_educated(data:data):
+    "returns most educated coutny"
     county = data[0]['name']
     state = data[0]['state']
     educated = 0
@@ -154,7 +188,15 @@ def most_educated(data:data):
 
 print(most_educated(data))
 
+generated_sentence_most_educated = '{county}, {state} is the {description} county'
+county = most_educated(data)[0]
+state = most_educated(data)[1]
+description = 'most educated'
+most_educated_sentence = generated_sentence_most_educated.format(county=county, state=state, description=description)
+print(most_educated_sentence)
+
 def least_educated(data:data):
+    "returns least educated county"
     county = data[0]['name']
     state = data[0]['state']
     educated = 100
@@ -167,10 +209,18 @@ def least_educated(data:data):
     return county, state, educated
 print(least_educated(data))
 
+generated_sentence_least_educated = '{county}, {state} is the {description} county'
+county = least_educated(data)[0]
+state = least_educated(data)[1]
+description = 'least educated'
+least_educated_sentence = generated_sentence_least_educated.format(county=county, state=state, description=description)
+print(least_educated_sentence)
+
 
 
 
 def female_skew(data:data):
+    "returns most female skewed county"
     county = data[0]['name']
     state = data[0]['state']
     female = 0
@@ -184,7 +234,15 @@ def female_skew(data:data):
 
 print(female_skew(data))
 
+generated_sentence_female_skew = '{county}, {state} is the {description} county'
+county = female_skew(data)[0]
+state = female_skew(data)[1]
+description = 'most female skewed'
+most_female_skew_sentence = generated_sentence_female_skew.format(county=county, state=state, description=description)
+print(most_female_skew_sentence)
+
 def male_skew(data:data):
+    "returns most male skewed county"
     county = data[0]['name']
     state = data[0]['state']
     female = 100
@@ -198,7 +256,15 @@ def male_skew(data:data):
 
 print(male_skew(data))
 
+generated_sentence_male_skew = '{county}, {state} is the {description} county'
+county = male_skew(data)[0]
+state = male_skew(data)[1]
+description = 'most male skewed'
+most_male_skew_sentence = generated_sentence_male_skew.format(county=county, state=state, description=description)
+print(most_male_skew_sentence)
+
 def oldest(data:data):
+    "returns oldest county"
     county = data[0]['name']
     state = data[0]['state']
     old = 0
@@ -211,7 +277,15 @@ def oldest(data:data):
     return county, state, old
 print(oldest(data))
 
+generated_sentence_oldest = '{county}, {state} is the {description} county'
+county = oldest(data)[0]
+state = oldest(data)[1]
+description = 'oldest'
+oldest_sentence = generated_sentence_oldest.format(county=county, state=state, description=description)
+print(oldest_sentence)
+
 def youngest(data:data):
+    "returns youngest county"
     county = data[0]['name']
     state = data[0]['state']
     old = 100
@@ -224,7 +298,15 @@ def youngest(data:data):
     return county, state, 1-old
 print(youngest(data))
 
+generated_sentence_youngest = '{county}, {state} is the {description} county'
+county = youngest(data)[0]
+state = youngest(data)[1]
+description = 'youngest'
+youngest_sentence = generated_sentence_youngest.format(county=county, state=state, description=description)
+print(youngest_sentence)
+
 def least_age_var(data: data):
+    "returns least age variant county"
     county = data[0]['name']
     state = data[0]['state']
     var = 100000
@@ -239,6 +321,13 @@ def least_age_var(data: data):
 
 print(least_age_var(data))
 
+generated_least_age_var = '{county}, {state} is the {description} county'
+county = least_age_var(data)[0]
+state = least_age_var(data)[1]
+description = 'least age variant'
+least_age_var_sentence = generated_least_age_var.format(county=county, state=state, description=description)
+print(least_age_var_sentence)
+
 # def employment(data:data):
 #     county = data[0]['name']
 #     state = data[0]['state']
@@ -246,20 +335,20 @@ print(least_age_var(data))
 #         if i['bls'] is None:
 #             return i
 
-def employment(data: list[dict]) -> list[dict]:
-    """Function to find counties without the BLS section."""
-    missing_bls = []  # List to collect items without the BLS section
+# def employment(data: list[dict]) -> list[dict]:
+#     missing_bls = []  # List to collect items without the BLS section
+#
+#     for i in data:
+#         if 'bls' not in i:
+#             missing_bls.append(i['name'])
+#
+#     return missing_bls
 
-    for i in data:
-        if 'bls' not in i:
-            missing_bls.append(i['name'])
 
-    return missing_bls
-
-
-print(employment(data))
+# print(employment(data))
 
 def highest_employment(data:data):
+     "returns county with highest employment"
      county = data[0]['name']
      state = data[0]['state']
      employment=0
@@ -275,8 +364,16 @@ def highest_employment(data:data):
      return county, state, employment
 print(highest_employment(data))
 
+generated_sentence_highest_employment = '{county}, {state} is the {description} county'
+county = highest_employment(data)[0]
+state = highest_employment(data)[1]
+description = 'highest employment'
+highest_employment_sentence = generated_sentence_highest_employment.format(county=county, state=state, description=description)
+print(highest_employment_sentence)
+
 
 def lowest_employment(data: data):
+    "returns county with lowest employment"
     county = data[0]['name']
     state = data[0]['state']
     employment = math.inf
@@ -296,12 +393,29 @@ def lowest_employment(data: data):
 
 print(lowest_employment(data))
 
+generated_sentence_lowest_employment = '{county}, {state} is the {description} county'
+county = lowest_employment(data)[0]
+state = lowest_employment(data)[1]
+description = 'lowest employment'
+lowest_employment_sentence = generated_sentence_lowest_employment.format(county=county, state=state, description=description)
+print(lowest_employment_sentence)
+
 with open('report.md', 'w')as mdfile:
     mdfile.write('#Lab6:data\n')
-    mdfile.write('Hawaii County HI is the Least Variance for Temperature\n')
-    mdfile.write('yukon-kyukuk census area AK is the Greatest Variance for Temperature\n')
-    mdfile.write('maricopa county is the fastest growing population\n')
     mdfile.write(temp_variance_sentence + '\n')
+    mdfile.write(temp_variance_greatest_sentence + '\n')
+    mdfile.write(growing_sentence + '\n')
+    mdfile.write(shrinking_sentence + '\n')
+    mdfile.write(death_sentence + '\n')
+    mdfile.write(most_educated_sentence + '\n')
+    mdfile.write(least_educated_sentence + '\n')
+    mdfile.write(most_female_skew_sentence + '\n')
+    mdfile.write(most_male_skew_sentence + '\n')
+    mdfile.write(oldest_sentence + '\n')
+    mdfile.write(youngest_sentence + '\n')
+    mdfile.write(least_age_var_sentence + '\n')
+    mdfile.write(highest_employment_sentence + '\n')
+    mdfile.write(lowest_employment_sentence + '\n')
 
 
 

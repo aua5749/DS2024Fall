@@ -168,7 +168,7 @@ def roll_dice_exception (dice_numbers: int, face_number: int) -> tuple:
         tuple_answer = tuple_answer +number_generated
     return tuple_answer
 
-print(roll_dice_exception(5,0))
+#print(roll_dice_exception(5,0))
 
 
 
